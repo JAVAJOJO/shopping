@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fore/index.css" rel="stylesheet"/>
+    <link href="css/fore/ProductShow.css" rel="stylesheet"/>
+</head>
+<body style="background-color: #f5f5f5">
+<!--引入头部-->
+<div id="head"></div>
+<!--首页内容头部-->
+<div class="content-head">
+    <div class="row">
+        <!--LOGO-->
+        <div class="head-logo col-lg-2 ">
+            <a class="navbar-brand" href="#">LanMao</a>
+        </div>
+        <!--搜索框-->
+        <div class="search-box col-lg-5">
+            <!--输入框-->
+            <form class="input-group" method="post" action="" enctype="multipart/form-data">
+                <input type="text" class="form-control" placeholder="Search for..."/>
+                <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                   </span>
+            </form>
+            <!--热词-->
+            <div class="hot-word" id="app-4">
+                <ul class="nav nav-pills">
+                    <li v-for="todo in todos"><a :href=todo.url>{{todo.text}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div></div>
+<!--首页内容导航框-->
+<div class="content-nav container">
+    <div class="side-nav">
+        <div class="top">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <span>商品分类</span>
+        </div>
+
+        <ul class="nav nav-pills nav-stacked" id="category">
+                    <li v-for="nav in navs">
+                        <a :href=nav.url>{{nav.text}}</a><span class="glyphicon glyphicon-menu-right icon"></span>
+                    </li>
+        </ul>
+        <!--分类隐藏-->
+        <div id="categoryhide" style="position: absolute;left: 136px;top: 180px;background-color: #F5F5F5">
+            <div class="productsAsideCategorys" cid="83">
+                <div class="row " v-for="row in rows">
+                    <a v-for="cate in row.cates" :style="cate.styles" :href=cate.url>{{cate.category}}</a>
+                    <div class="seperator"></div>
+                </div>
+            </div>
+        </div>
+        <!--分类隐藏-->
+    </div>
+
+    <!--头部导航栏-->
+    <div class="top-nav">
+        <ul class="nav nav-pills">
+            <li><a href="category.html">天猫</a> </li>
+            <li><a href="category.html">聚划算</a> </li>
+            <li><a href="category.html">天猫超市</a> </li>
+            <li><a href="category.html">淘抢购</a> </li>
+            <li><a href="category.html">电器城</a> </li>
+            <li><a href="category.html">司法拍卖</a> </li>
+            <li><a href="category.html">淘宝心选</a> </li>
+            <li><a href="category.html">兴农脱贫</a> </li>
+            <li><a href="category.html">飞猪旅行</a> </li>
+            <li><a href="category.html">智能生活</a> </li>
+            <li><a href="category.html">苏宁易购</a> </li>
+        </ul>
+    </div>
+    <div class="banner-nav">
+        <div data-ride="carousel" class="carousel-of-product carousel slide" id="carousel-of-product">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#carousel-of-product"></li>
+                <li data-slide-to="1" data-target="#carousel-of-product" class=""></li>
+                <li data-slide-to="2" data-target="#carousel-of-product" class=""></li>
+                <li data-slide-to="3" data-target="#carousel-of-product" class=""></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div role="listbox" class="carousel-inner">
+                <div class="item active">
+                    <img src="img/1.jpg" class="carousel carouselImage">
+                </div>
+                <div class="item">
+                    <img src="img/2.jpg" class="carouselImage">
+                </div>
+                <div class="item">
+                    <img src="img/3.jpg" class="carouselImage">
+                </div>
+                <div class="item">
+                    <img src="img/4.jpg" class="carouselImage">
+                </div>
+            </div>
+        </div>
+        <div data-ride="carousel" class="carousel-of-product carousel slide down-banner" id="carousel-example-generic">
+            <!-- Wrapper for slides -->
+            <div role="listbox" class="carousel-inner">
+                <div class="item active">
+                    <img src="img/1.jpg" style="width: 50%;height: 145px" class="carousel carouselImage">
+                    <img src="img/4.jpg" style="width: 50%;height: 145px" class="carousel carouselImage">
+                </div>
+                <div class="item">
+                    <img src="img/2.jpg" style="width: 50%;height: 145px" class="carouselImage">
+                    <img src="img/3.jpg" style="width: 50%;height: 145px" class="carouselImage">
+                </div>
+                <div class="item">
+                    <img src="img/3.jpg" style="width: 50%;height: 145px" class="carouselImage">
+                    <img src="img/4.jpg" style="width: 50%;height: 145px" class="carouselImage">
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!--轮播结束-->
+    <div class="pernal-nav">
+        <div class="top">
+            <div class="head">
+                <div class="row">
+                    <div class="col-xs-7 col-md-4 icon">
+                        <a href="#" class="thumbnail"><img src="img/head_icon3.png"></a>
+                        <span>中国队长</span>
+                    </div>
+                </div>
+            </div>
+            <div class="user-status">
+                <div class="item"><span>0</span><a href="#">待收货</a></div>
+                <div class="item"><span>1</span><a href="#">待发货</a></div>
+                <div class="item"><span>0</span><a href="#">待付款</a></div>
+                <div class="item"><span>2</span><a href="#">待评价</a></div>
+            </div>
+        </div>
+        <div class="howerver">
+            <div class="howerver-title"><span class="glyphicon glyphicon-th-list"></span><span style="margin-left: 10px">暂时想不出来<span/></div>
+        </div>
+        <div class="middle">
+            <div data-ride="carousel" class="carousel slide" id="carousel-of-resume">
+                <!-- Wrapper for slides -->
+                <div role="listbox" class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/1.jpg" class="carousel carouselImage">
+                        <div class="carousel-caption">
+                            <h5>今天通知</h5>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/2.jpg" class="carouselImage">
+                        <div class="carousel-caption">
+                            <h5>今天通知</h5>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/3.jpg" class="carouselImage">
+                        <div class="carousel-caption">
+                            <h5>今天通知</h5>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/4.jpg" class="carouselImage">
+                        <div class="carousel-caption">
+                            <h5>今天通知</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-of-resume" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-of-resume" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--引入产品列表-->
+<div class="content-nav container productshow" >
+    <div class="homepageCategoryProducts" >
+        <div class="eachHomepageCategoryProducts hot-product" id="productshow">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">热卖商品</span>
+            <div style="clear:both"></div>
+            <div class="productItem" v-for="product in products">
+                <a href="productdetail.html"><img width="100px" :src="product.url"></a>
+                <a href="productdetail.html" class="productItemDescLink">
+                    <span class="productItemDesc">{{product.text}}</span>
+                </a>
+                <span class="productPrice">{{product.price}}</span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="eachHomepageCategoryProducts hot-product" id="goodshow" style="margin-left: 15px">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">推荐商品</span>
+            <div style="clear:both"></div>
+            <div class="productItem" v-for="good in goods">
+                <a href="#"><img width="100px" :src="good.url"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">{{good.text}}</span>
+                </a>
+                <span class="productPrice">{{good.price}}</span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="eachHomepageCategoryProducts other-product" id="loveshow">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">大众喜爱</span>
+            <div style="clear:both"></div>
+            <div class="productItem" v-for="love in loves">
+                <a href="#"><img width="100px" :src="love.url"></a>
+                <a href="#" class="productItemDescLink">
+							<span class="productItemDesc">{{love.text}}</span>
+                </a>
+                <span class="productPrice">{{love.price}}</span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="eachHomepageCategoryProducts other-product" id="othershow">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">安全座椅</span>
+            <div style="clear:both"></div>
+            <div class="productItem" v-for="other in others">
+                <a href="#"><img width="100px" :src="other.url"></a>
+                <a href="#" class="productItemDescLink">
+							<span class="productItemDesc">{{other.text}}</span>
+                </a>
+                <span class="productPrice">{{other.price}}</span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <img src="img/end.png" class="endpng" id="endpng">
+    </div>
+</div>
+<!--引入页尾-->
+<div id="bottom"></div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.min.js"></script>
+<!--引入index.js-->
+<script src="js/vue.js"></script>
+<script src="js/show.js"></script>
+<script src="js/index.js"></script>
+</html>

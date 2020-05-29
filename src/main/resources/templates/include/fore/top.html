@@ -1,0 +1,29 @@
+
+<nav class="top" th:fragment="html">
+	<script src="js/head.js"></script>
+	<a href="home">
+		<span class="glyphicon glyphicon glyphicon-home redColor"></span>
+		JOJO首页
+	</a>
+
+	<span>WRY!!!!!欢迎来到JOJO</span>
+	<a href="login">登录</a>
+	<a href="register">注册</a>
+
+    <span th:if="${null!=session.user}">
+		<a href="login" th:text="${session.user.name}"></a>
+		<a href="forelogout" >退出</a>
+	</span>
+
+	<span class="pull-right">
+            <a href="category">商品分类</a>
+            <a href="bought">我的订单</a>
+            <a href="cart" id="cartcount">
+            <span class=" glyphicon glyphicon-shopping-cart redColor" ></span>
+            购物车<span class="badge">{{ha.cartcount}}</span></a>
+	</span>
+
+</nav>
+
+
+

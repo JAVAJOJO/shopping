@@ -1,0 +1,226 @@
+.content-head .row{
+        margin-left: 15px;
+        margin-right:15px;
+    }
+.search-box{
+    margin-top: 35px;
+
+}
+input{
+    outline: none;
+}
+.search-box .nav-tabs li a {
+    padding: 5px 10px;
+}
+.search-box .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+   color: #f5f5f5;
+    background-color: #2b669a;
+}
+.input-group .form-control:first-child{
+    border-color: #b92c28;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+}
+.content-head .head-logo{
+     margin-top:30px;
+     margin-left:178px;
+
+}
+.hot-word .nav-pills li a{
+    padding: 0;
+    padding-left: 10px;
+}
+.hot-word .nav-pills li a:hover{
+    background-color:transparent ;
+    color: #b92c28;
+}
+.content-nav{
+    margin-top: 20px;
+}
+/*顶导航栏开始*/
+.content-nav .top-nav{
+    float: left;
+    height:30px;
+}
+.content-nav .top-nav .nav {
+    background-color: #2b669a;
+}
+.content-nav .top-nav .nav li a{
+    padding: 1px 15px;
+    color: #f5f5f5;
+    font-size: 16px;
+}
+.content-nav .top-nav .nav li a:hover{
+    background-color: transparent;
+}
+/*顶部导航栏结束*/
+/*侧边栏开始*/
+.content-nav .side-nav{
+     float: left;
+     width: 166px;
+}
+.content-nav .side-nav .nav-stacked{
+    padding: 10px 0;
+    border: 1px solid #2b669a;
+}
+
+.content-nav .side-nav .nav li a{
+    display: inline-block;
+    font-size: 16px;
+    padding:  2px 10px;
+    background-color: transparent;
+}
+.content-nav .side-nav .nav li .icon{
+    position: absolute;
+    right: 0;
+    font-size: 5px;
+    margin-top: 5px;
+}
+.content-nav .side-nav .nav li a:hover{
+    text-decoration: underline;
+}
+.content-nav .side-nav .nav li:hover{
+    background-color: rgba(43,102,154,0.2);
+
+}
+#categoryhide{
+    display: none;
+}
+
+.content-nav .side-nav  .top{
+         background-color: #2b669a;
+         color: white;
+         font-size: 15px;
+         height: 24px;
+         padding-top:3px ;
+}
+.content-nav .side-nav  .top span{
+         font-size: 15px;
+         padding:0 10px;
+}
+/*轮播2*/
+#carousel-of-product{
+     padding: 10px 10px;
+}
+.banner-nav .down-banner{
+    margin-top: 21px;
+    padding: 0 10px;
+}
+.banner-nav .down-banner .left{
+    left: 10px;
+}
+.banner-nav .down-banner .right{
+    right: 10px;
+}
+.banner-nav .down-banner .carousel-inner img{
+        float: left;
+
+}
+.banner-nav .down-banner .carousel-inner .item img{
+     border: 1px solid #000000;
+}
+/*侧边栏结束*/
+.content-nav .banner-nav{
+    width: 750px;
+    height: 495px;
+    float: left;
+}
+
+.content-nav .pernal-nav{
+    float: left;
+    border: 1px solid #0f0f0f;
+    width: 220px;
+    margin-left: 3px;
+}
+.content-nav .pernal-nav .top{
+    height: 150px;
+}
+.content-nav .pernal-nav .top .head .row .icon{
+    position: relative;
+    left: 35%;
+    top:10px;
+
+}
+
+.howerver{
+    width: 100%;
+    border: 1px solid #2b669a;
+    height: 250px;
+}
+.howerver .howerver-title{
+    width: 100%;
+    height: 30px;
+    background: #2b669a;
+    padding: 5px;
+}
+.howerver .howerver-title span{
+    color: white;
+}
+.content-nav .pernal-nav .top .head .row .icon .thumbnail{
+    padding: 0;
+    margin: 0;
+}
+.content-nav .pernal-nav .top .user-status .item{
+    float: left;
+    margin-left: 16px;
+    margin-top: 34px;
+}
+
+.content-nav .pernal-nav .top .user-status .item span{
+    display: block;
+    text-align: center;
+}
+.content-nav .pernal-nav .middle .nav li a{
+    font-size: 14px;
+    padding: 0;
+}
+.content-nav .pernal-nav .middle .carousel .carousel-inner .item .carousel-caption{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+.content-nav .pernal-nav .middle .carousel .carousel-inner .item .carousel-caption h5{
+    margin-top: 26px;
+}
+/*隐藏*/
+div.productsAsideCategorys{
+    width: 700px;
+    background-color: white;
+    margin-left: 220px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border: 1px solid #2b669a;
+    z-index: 1;
+}
+div.productsAsideCategorys div.row{
+    margin: 0px 80px 0px 0px;
+}
+div.productsAsideCategorys div.row div.seperator{
+    margin-top: 20px;
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-bottom-color: #e7e7e7;
+}
+div.productsAsideCategorys a{
+    color: #999;
+    font-size: 14px;
+    margin: 8px;
+}
+div.productsAsideCategorys a:hover{
+    color: #C40000;
+    text-decoration: none;
+}
+div.eachCategory{
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+div.eachCategory span{
+    margin-right: 10px;
+}
+div.eachCategory:hover{
+    background-color: white;
+}
