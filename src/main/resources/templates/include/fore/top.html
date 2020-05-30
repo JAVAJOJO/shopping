@@ -1,6 +1,5 @@
 
 <nav class="top" th:fragment="html">
-	<script src="js/head.js"></script>
 	<a href="home">
 		<span class="glyphicon glyphicon glyphicon-home redColor"></span>
 		JOJO首页
@@ -16,11 +15,11 @@
 	</span>
 
 	<span class="pull-right">
-            <a href="category">商品分类</a>
+            <!--<a href="category">商品分类</a>-->
             <a href="bought">我的订单</a>
-            <a href="cart" id="cartcount">
+            <a href="cart" >
             <span class=" glyphicon glyphicon-shopping-cart redColor" ></span>
-            购物车<span class="badge">{{ha.cartcount}}</span></a>
+            购物车<span class="badge"><strong th:text="${session.cartTotalItemNumber}"></strong></span></a>
 	</span>
 
 </nav>

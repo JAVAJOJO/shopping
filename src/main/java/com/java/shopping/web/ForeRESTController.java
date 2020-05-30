@@ -130,7 +130,7 @@ public class ForeRESTController {
     }
     @GetMapping("forecategory/{cid}")
     //接收请求路径中占位符的值
-    public Object category(@PathVariable int cid,String sort) {
+    public Object category(String sort,@PathVariable int cid) {
         Category c = categoryService.get(cid);
         productService.fill(c);
         productService.setSaleAndReviewNumber(c.getProducts());
@@ -157,7 +157,6 @@ public class ForeRESTController {
                     break;
             }
         }
-
         return c;
     }
     @PostMapping("foresearch")
