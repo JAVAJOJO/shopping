@@ -1,13 +1,13 @@
 package com.java.shopping.web;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.java.shopping.pojo.User;
 import com.java.shopping.service.UserService;
 import com.java.shopping.util.Page4Navigator;
- 
+
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class UserController {
 	@Autowired UserService userService;
@@ -18,8 +18,12 @@ public class UserController {
     	Page4Navigator<User> page = userService.list(start,size,5); 
         return page;
     }
-	    
 
+    @DeleteMapping("/users/{id}")
+    public String delete(@PathVariable("id") int id)  throws Exception {
+        userService.delete(id);
+        return null;
+    }
         
 }
 

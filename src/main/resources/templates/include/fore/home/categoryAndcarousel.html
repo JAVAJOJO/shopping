@@ -1,42 +1,126 @@
 <div th:fragment="html">
-    <img src="img/site/catear.png" id="catear" class="catear"/>
-
-    <div class="categoryWithCarousel">
+    <!--<img src="img/site/catear.png" id="catear" class="catear"/>-->
 
 
-        <div class="headbar show1">
-            <div class="head ">
+    <div class="content-nav container">
+        <div class="side-nav">
+            <div class="top">
 
-                <span style="margin-left:10px" class="glyphicon glyphicon-th-list"></span>
-                <span style="margin-left:10px" >商品分类</span>
-
+                <span class="glyphicon glyphicon-th-list"></span>
+                <span >商品分类</span>
             </div>
-
-            <div class="rightMenu">
-                <span><a href=""><img src="img/site/chaoshi.png"/></a></span>
-                <span><a href=""><img src="img/site/guoji.png"/></a></span>
-
-                <span v-for="c,index in categories" v-if='index<=3'>
-						<a :href="'category?cid='+c.id">{{c.name}}</a>
-					</span>
+            <div >
+                <div th:replace="include/fore/home/categoryMenu::html" ></div>
             </div>
+            <!--<div  style="position: absolute;left: 136px;top: 180px;background-color: #F5F5F5">-->
+                <!--<div th:replace="include/fore/home/productsAsideCategorys::html" ></div>-->
+            <!--</div>-->
 
+            <!--<div id="categoryhide"  class="top-nav">-->
+                <!--&lt;!&ndash;<span><a href=""><img src="img/site/chaoshi.png"/></a></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<span><a href=""><img src="img/site/guoji.png"/></a></span>&ndash;&gt;-->
+                <!--<div class="nav nav-pills">-->
+                        <!--<span v-for="c,index in categories" v-if='index<=3'>-->
+						<!--<a :href="'category?cid='+c.id">{{c.name}}</a>-->
+					<!--</span>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
-
-        <div style="position: relative">
-            <div th:replace="include/fore/home/categoryMenu::html" ></div>
-        </div>
-
-        <div style="position: relative;left: 0;top: 0;">
-            <div th:replace="include/fore/home/productsAsideCategorys::html" ></div>
-        </div>
-
 
         <div th:replace="include/fore/home/carousel::html" ></div>
 
 
-        <div class="carouselBackgroundDiv">
+        <!--轮播结束-->
+        <div class="pernal-nav">
+            <div class="top">
+                <div class="head">
+                    <div class="row">
+                        <div class="col-xs-7 col-md-4 icon">
+                            <a href="register" class="thumbnail">注册</a>
+                            <a href="login" class="thumbnail">登录 </a>
+                            <!--<span>中国队长</span>-->
+                            <span th:if="${null!=session.user}">
+                                <img width="70px" src="img/head_icon3.png">
+		                    <a  th:text="${session.user.name}"></a>
+                                <a href="forelogout" >退出</a>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="user-status">-->
+                    <!--<div class="item"><span>0</span><a href="#">待收货</a></div>-->
+                    <!--<div class="item"><span>1</span><a href="#">待发货</a></div>-->
+                    <!--<div class="item"><span>0</span><a href="#">待付款</a></div>-->
+                    <!--<div class="item"><span>2</span><a href="#">待评价</a></div>-->
+                <!--</div>-->
+            </div>
+            <h5>
+            -----------------------------------------------
+        </h5>
+            <h5>
+                <a href="bought">我的订单</a>
+                <a href="cart" >
+                    <span class=" glyphicon glyphicon-shopping-cart redColor" ></span>
+                    购物车<strong th:text="${session.cartTotalItemNumber}"></strong></span></a>
+            </h5>
+
+
+
+            <div class="howerver">
+                <div class="howerver-title">
+                    <span class="glyphicon glyphicon-th-list">
+
+                </span>
+                </div>
+            </div>
+
+            <div class="middle">
+                <div data-ride="carousel" class="carousel slide" id="carousel-of-resume">
+                    <!-- Wrapper for slides -->
+                    <div role="listbox" class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/lunbo/.jpg" class="carousel carouselImage">
+                            <div class="carousel-caption">
+                                <h5>今天通知</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/lunbo/2.jpg" class="carouselImage">
+                            <div class="carousel-caption">
+                                <h5>今天通知</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/lunbo/3.jpg" class="carouselImage">
+                            <div class="carousel-caption">
+                                <h5>今天通知</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="img/lunbo/1.jpg" class="carouselImage">
+                            <div class="carousel-caption">
+                                <h5>今天通知</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-of-resume" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-of-resume" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
         </div>
+
+
+
+        <!--<div class="carouselBackgroundDiv">-->
+        <!--</div>-->
 
     </div>
 </div>

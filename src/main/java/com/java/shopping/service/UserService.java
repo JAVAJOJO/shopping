@@ -44,5 +44,8 @@ public class UserService {
 	public void add(User user) {
 		userDAO.save(user);
 	}
+	public void delete(int id) {
+		userDAO.delete(id);
+	}
 
 }

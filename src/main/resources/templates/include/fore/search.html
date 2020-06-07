@@ -3,7 +3,7 @@
     </a>
     <form action="search" method="get" >
     <div class="searchDiv">
-        <input name="keyword" type="text" placeholder="时尚男鞋  太阳镜 ">
+        <input name="keyword" type="text" placeholder="秘制小汉堡    奥利奥 ">
         <button class="searchButton" type="submit">搜索</button>
         <div class="searchBelow">
                 <span th:each="c,status: ${application.categories_below_search}" th:if="${status.index>=4 && status.index<=7}">

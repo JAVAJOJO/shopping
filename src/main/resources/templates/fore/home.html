@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="include/fore/header::html" >
-    <!--<link href="css/fore/index.css" rel="stylesheet">-->
-    <!--<link href="css/fore/ProductShow.css" rel="stylesheet">-->
+<head th:include="include/fore/header2::html" >
 </head>
-<body>
+
+
+<body style="background-color: #f5f5f5">
+
+
+<!--搜索-->
+<div class="content-head">
+    <div class="row">
+        <!--LOGO-->
+        <div class="head-logo col-lg-2 ">
+            <a class="navbar-brand" href="#">LanMao</a>
+        </div>
+        <!--搜索框-->
+        <div class="search-box col-lg-5">
+            <!--输入框-->
+            <form  class="input-group" method="get" action="search" >
+                <input name="keyword" type="text" class="form-control" placeholder="Search for..."/>
+                <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">Go!</button>
+                   </span>
+            </form>
+            <!--热词-->
+            <div class="hot-word" id="app-4">
+                <span th:each="c,status: ${application.categories_below_search}" th:if="${status.index>=4 && status.index<=7}">
+					<a th:href="@{'category?cid='+${c.id}}" th:text="${c.name}" ></a>
+					<span th:if="${status.index!=8}">|</span>
+	            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="workingArea">
-    <div th:replace="include/fore/top::html" ></div>
-    <div th:replace="include/fore/search::html" ></div>
+    <!--<div th:replace="include/fore/top::html" ></div>-->
     <div th:replace="include/fore/home/homePage::html" ></div>
-    <div th:replace="include/fore/footer::html" ></div>
+    <!--<div th:replace="include/fore/footer::html" ></div>-->
 </div>
 </body>
 </html>

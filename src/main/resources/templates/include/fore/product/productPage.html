@@ -53,10 +53,11 @@
         });
     </script>
 
-    <title>模仿天猫官网 -- {{p.name}}</title>
-    <div class="categoryPictureInProductPageDiv">
-        <img v-if="category!=null" class="categoryPictureInProductPage" :src="'img/category/'+category.id+'.jpg'">
-    </div>
+    <title>老八美食店 -- {{p.name}}</title>
+    <!--<div class="categoryPictureInProductPageDiv">-->
+        <!--<img v-if="category!=null" class="categoryPictureInProductPage" :src="'img/category/'+category.id+'.jpg'">-->
+    <!--</div>-->
+
     <div class="productPageDiv">
         <div th:replace="include/fore/product/imgAndInfo::html" ></div>
         <div th:replace="include/fore/product/productReview::html" ></div>
